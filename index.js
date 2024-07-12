@@ -1,6 +1,7 @@
 import express from "express";
 import connectDB from "./connect.db.js";
 import customerRoutes from "./customer/customer.controller.js";
+import restaurantRoutes from "./restaurant/restaurant.controller.js";
 
 const app = express();
 //to make app understand json
@@ -11,6 +12,7 @@ connectDB();
 
 //register routes
 app.use(customerRoutes);
+app.use("/restaurant", restaurantRoutes);
 
 //network port and server
 const PORT = 8080;
